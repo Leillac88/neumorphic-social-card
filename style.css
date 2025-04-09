@@ -1,0 +1,121 @@
+:root {
+    --bg: #e0e5ec;
+    --card-bg: #ffffff79;
+    --icon-bg: rgba(218, 225, 233, 0.8);
+    --text: #333;
+    --shadow-dark: rgba(254, 198, 83, 0.4);
+    --shadow-light: rgb(84, 66, 214, 0.4);
+    --accent: ##a3349a;
+    --radius: 25px;
+    --radius-btn :10px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    position: relative;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 25px;
+
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card:hover {
+    transform: translatey(-5px);
+    box-shadow: 10px 10px 12px var(--shadow-dark), -8px -8px 12px var(--shadow-light);
+}
+
+.card:active {
+    transform: translateY(0px);
+    box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+}
+
+.card-icon {
+    width: 115px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    color: var(--accent);
+    background: var(--icon-bg);
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), inset 3px 3px 6px var(--shadow-light);
+    transition: transform 0.5s;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.2) translateZ(20px);
+}
+
+.card h1 {
+    font-family: cursive;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;    
+}
+
+.card p {
+    font-family: cursive;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.2;
+    opacity: 0.9;
+}
+
+.card-btn {
+    background: var(--icon-bg);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius-btn);
+    padding: 0px 0px;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px var(--shadow-dark), -2px -2px 8px var(--shadow-light);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.card-btn:hover {
+    color: var(--accent);
+    background-color: var(--shadow-dark);
+}
+
+.card-btn:active {
+    box-shadow: inset 2px 2px 4px var(--shadow-dark), inset -2px -2px 4px var(--shadow-light);
+}
